@@ -1,0 +1,40 @@
+
+.container_login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container_login_card{
+    height: 90%;
+    margin-top: 2%;
+}
+
+.login_card_body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.div_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8%;
+}
+.logo{
+    width: 50% ;
+}
+
+.input_login{
+    margin-bottom: 10%;
+}
+
+.div_btn_login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+

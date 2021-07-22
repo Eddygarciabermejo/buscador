@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punto total - Dashboard</title>
+    <!--Bootstraps-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/main.css')}}"
+    />
+  </head>
+  <body>
+    <nav >
+        <a class=" a_logo" href="#">
+          <img
+            class="logo"
+            src="{{url_for('static', filename='img/logofon.png')}}"
+            alt=""
+          />
+        </a>
+    </nav>
+
+    <main class="div_main">
+      <div class="div_main">
+        <h1 class="display-4 text-center mt-4 title_h1">Añade un nuevo producto</h1>
+        <div class="row">
+          <div class="col-md-4 offset-md-4 my-auto">
+            <div class="card">
+              <div class="card-header">
+                <form action="/create" method="POST">
+                  <div class="form-group">
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      placeholder="Nombre"
+                      name="nombre"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      placeholder="Referencia"
+                      name="referencia"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      placeholder="Ubicación"
+                      name="ubicacion"
+                    />
+                  </div>
+                  <button class="btn btn-primary btn-block">Guardar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="container div_container">
+          <table style="width:100%">
+            <tr>
+              <th>Nombre</th>
+              <th>Referencia</th>
+              <th>Ubicación</th>
+            </tr>
+
+            {% for task in tasks %}
+            <tr>
+              <td>{{task.nombre}}</td>
+              <td>{{task.referencia}}</td>
+              <td>{{task.ubicacion}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
